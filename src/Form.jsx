@@ -47,13 +47,13 @@ function Form({ onSubmit, onCancel, maxEntriesReached }) {
 
       <div className="form-group">
         <label htmlFor="serializedData">
-          Serialized Data <span className="required">*</span>
+          Serialized Data (PHP or JSON) <span className="required">*</span>
         </label>
         <textarea
           id="serializedData"
           value={serializedData}
           onChange={(e) => setSerializedData(e.target.value)}
-          placeholder="Paste your PHP serialized or JSON data here..."
+          placeholder="Paste your PHP serialized or JSON data here to unserialize and beautify..."
           className="form-textarea"
           rows={6}
           required
