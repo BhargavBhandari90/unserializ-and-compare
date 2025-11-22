@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { IconPlus, IconShare, IconCheck, IconTrash } from '@tabler/icons-react';
+import { IconPlus, IconShare, IconCheck, IconTrash, IconShield } from '@tabler/icons-react';
 import Form from './Form';
 import ResultDisplay from './ResultDisplay';
 import { unserializeData } from './utils/unserialize';
@@ -176,6 +176,15 @@ function App() {
           </div>
         )}
       </main>
+
+      <footer className="app-footer">
+        <div className="privacy-notice">
+          <IconShield size={20} className="privacy-icon" />
+          <div className="privacy-content">
+            <strong>Privacy First:</strong> All data processing happens in your browser. No cookies, no tracking, no server storage.
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
