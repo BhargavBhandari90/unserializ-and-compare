@@ -1,3 +1,4 @@
+import { IconX } from '@tabler/icons-react';
 import { formatForDisplay } from './utils/unserialize';
 import './ResultDisplay.css';
 
@@ -27,7 +28,7 @@ function ResultDisplay({ entry, onRemove }) {
           </div>
           {onRemove && (
             <button onClick={onRemove} className="btn-remove" title="Remove this entry">
-              ×
+              <IconX size={20} />
             </button>
           )}
         </div>

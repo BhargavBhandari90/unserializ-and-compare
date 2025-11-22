@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { IconCheck, IconX } from '@tabler/icons-react';
 import './Form.css';
 
 function Form({ onSubmit, onCancel, maxEntriesReached }) {
@@ -62,10 +63,12 @@ function Form({ onSubmit, onCancel, maxEntriesReached }) {
 
       <div className="form-actions">
         <button type="submit" className="btn btn-primary" disabled={maxEntriesReached}>
+          <IconCheck size={18} />
           Submit
         </button>
         {onCancel && (
           <button type="button" onClick={onCancel} className="btn btn-secondary">
+            <IconX size={18} />
             Cancel
           </button>
         )}

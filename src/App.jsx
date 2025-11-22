@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { IconPlus, IconShare, IconCheck } from '@tabler/icons-react';
 import Form from './Form';
 import ResultDisplay from './ResultDisplay';
 import { unserializeData } from './utils/unserialize';
@@ -112,7 +113,8 @@ function App() {
           <div className="empty-state">
             <p>No data to display. Click the button below to add your first entry.</p>
             <button onClick={handleAddNew} className="btn-add" disabled={entries.length >= 3}>
-              + Add New
+              <IconPlus size={20} />
+              Add New
             </button>
           </div>
         )}
@@ -124,18 +126,29 @@ function App() {
               <div className="results-header-actions">
                 {!showForm && entries.length < 3 && (
                   <button onClick={handleAddNew} className="btn-add">
-                    + Add New
+                    <IconPlus size={20} />
+                    Add New
                   </button>
                 )}
                 {entries.length >= 3 && (
-                  <span className="max-entries-message">Maximum 3 entries reached</span>
+                  <span className="max-entries-message">Max 3 comparisons</span>
                 )}
                 <button 
                   onClick={handleCopyShareLink} 
                   className="btn-share"
                   title="Copy shareable link"
                 >
-                  {copySuccess ? '✓ Copied!' : '📋 Share Link'}
+                  {copySuccess ? (
+                    <>
+                      <IconCheck size={20} />
+                      Copied!
+                    </>
+                  ) : (
+                    <>
+                      <IconShare size={20} />
+                      Share
+                    </>
+                  )}
                 </button>
               </div>
             </div>
