@@ -129,20 +129,18 @@ function App() {
             <div className="results-header">
               <h2>Results</h2>
               <div className="results-header-actions">
-                {!showForm && entries.length < 3 && (
-                  <>
-                    <button onClick={handleClearAll} className="btn btn-remove">
-                      <IconTrash size={20} />
-                      Clear All
-                    </button>
-                    <button onClick={handleAddNew} className="btn btn-add">
-                      <IconPlus size={20} />
-                      Add
-                    </button>
-                  </>
-                )}
                 {entries.length >= 3 && (
                   <span className="max-entries-message">Max 3 comparisons</span>
+                )}
+                <button onClick={handleClearAll} className="btn btn-remove">
+                  <IconTrash size={20} />
+                  Clear All
+                </button>
+                {!showForm && entries.length < 3 && (
+                  <button onClick={handleAddNew} className="btn btn-add">
+                    <IconPlus size={20} />
+                    Add
+                  </button>
                 )}
                 <button 
                   onClick={handleCopyShareLink} 
